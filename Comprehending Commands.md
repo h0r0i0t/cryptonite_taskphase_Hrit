@@ -244,3 +244,30 @@ It is: pwn.college{MyBCaXht4C23dNi1oTFlq9ZnUuG.dljM4QDLyAjN0czW}
 - Better understanding on how to absolute paths and how to refer to directories without cd'ing into them
 - Revision of syntax of previous functions
 
+
+## Challenge 10: making directories
+
+### Thought Process:
+Using the mkdir command, I made a new directory in tmp called pwn, and then by the touch command a file college I created.
+
+### Code:
+```bash
+Connected!
+hacker@commands~making-directories:~$ cd /
+hacker@commands~making-directories:/$ cd /tmp
+hacker@commands~making-directories:/tmp$ mkdir pwn
+hacker@commands~making-directories:/tmp$ cd /tmp
+hacker@commands~making-directories:/tmp$ ls
+bin  hsperfdata_root  pwn  tmp.MiOQGWw5Zc
+hacker@commands~making-directories:/tmp$ cd /tmp/pwn
+hacker@commands~making-directories:/tmp/pwn$ touch college
+hacker@commands~making-directories:/tmp/pwn$ ls
+college
+hacker@commands~making-directories:/tmp/pwn$ /challenge/run
+Success! Here is your flag:
+pwn.college{kfpX7XEskIRxUYzLBccn-udmvG1.dFzM4QDLyAjN0czW}
+```
+### Learnings:
+- The use of mkdir commands to make new directories
+- Revision of the use of touch command to make new files
+
