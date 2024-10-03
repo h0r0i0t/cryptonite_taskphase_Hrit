@@ -162,5 +162,36 @@ Correct usage! Your flag: pwn.college{IrLLy3xUx-dUE3FrQeBS4QSLqz9.ddjM4QDLyAjN0c
 - how to use the --help command when we cant use man to get some more information on a certain program that doesnot hacve a designated manpage for it.
 
 
+## Challenge 7: Help for Buildins
+
+### Thought Process
+simply by using the help command, we get all the information we need to get the flag. A secret value is given and the argument needed to pass to the value.
+
+### Code:
+```bash
+Connected!
+hacker@man~help-for-builtins:~$ help challenge
+challenge: challenge [--fortune] [--version] [--secret SECRET]
+    This builtin command will read you the flag, given the right arguments!
+
+    Options:
+      --fortune         display a fortune
+      --version         display the version
+      --secret VALUE    prints the flag, if VALUE is correct
+
+    You must be sure to provide the right value to --secret. That value
+    is "AouoMN64".
+hacker@man~help-for-builtins:~$ challenge --fortune
+The public demands certainties;  it must be told definitely and a bit
+raucously that this is true and that is false.  But there are no certainties.
+                -- H. L. Mencken, "Prejudice"
+hacker@man~help-for-builtins:~$ challenge --version
+I'm exactly the version I need to be!
+hacker@man~help-for-builtins:~$ challenge --secret AouoMN64
+Correct! Here is your flag!
+pwn.college{AouoMN64mdCyP3_lwN2Y6_duZHs.dRTM5QDLyAjN0czW}
+```
+### Learnings:
+- 
 
 
