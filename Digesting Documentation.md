@@ -192,6 +192,6 @@ Correct! Here is your flag!
 pwn.college{AouoMN64mdCyP3_lwN2Y6_duZHs.dRTM5QDLyAjN0czW}
 ```
 ### Learnings:
-- 
+- How to acess buildin commands and their use.
 
 
