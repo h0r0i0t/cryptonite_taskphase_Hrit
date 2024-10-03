@@ -135,4 +135,32 @@ Correct usage! Your flag: pwn.college{I43dh9OEHJHvQ0sUd1V5fm25HDP.dVTM4QDLyAjN0c
 ### References:
 [https://www.youtube.com/watch?v=-CTBgNO-MHY]
 
+## Challenge 6: Helpful Programs
+
+### Thought Process
+Running the --help command on /challenge/challenge, we get some information. one of which says that we can get the flag by running some value with -g, and another one which says that you can get the number by -p. Simply running these commands gives us these answers.
+
+### Code:
+```bash
+Connected!
+hacker@man~helpful-programs:~$ /challenge/challenge --help
+usage: a challenge to make you ask for help [-h] [--fortune] [-v] [-g GIVE_THE_FLAG] [-p]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --fortune             read your fortune
+  -v, --version         get the version number
+  -g GIVE_THE_FLAG, --give-the-flag GIVE_THE_FLAG
+                        get the flag, if given the correct value
+  -p, --print-value     print the value that will cause the -g option to give you the flag
+hacker@man~helpful-programs:~$ /challenge/challenge -p
+The secret value is: 334
+hacker@man~helpful-programs:~$ /challenge/challenge -g 334
+Correct usage! Your flag: pwn.college{IrLLy3xUx-dUE3FrQeBS4QSLqz9.ddjM4QDLyAjN0czW}
+```
+### Learnings:
+- how to use the --help command when we cant use man to get some more information on a certain program that doesnot hacve a designated manpage for it.
+
+
+
 
