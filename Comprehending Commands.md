@@ -410,3 +410,43 @@ pwn.college{8gtk12Q5YNT9eL249mTk5QMt-Y9.dJzM4QDLyAjN0czW}
 ### Learnings:
 - How to use the 'find' command to search for files with a certain name.
 
+
+## Challenge 12: Linking Files
+
+### Thought Process:
+This was a very tricky question, as I kept encountering the same errors. As it kept showing me that the file exsts, i deleted the ~/not-the-flag file to remake it with a link. then i linked it with /flag and ran the challenge command. After some errors i managed to get it to work.
+### Code:
+```bash
+                                                                                                                                                        Connected!
+hacker@commands~linking-files:~$ cd /
+hacker@commands~linking-files:/$ ln -s /flag /challenge/catflag
+ln: failed to create symbolic link '/challenge/catflag': File exists
+hacker@commands~linking-files:/$ cat /challenge/catflag
+#!/opt/pwn.college/bash
+
+fold -s <<< "About to read out the /home/hacker/not-the-flag file!"
+cat /home/hacker/not-the-flag
+hacker@commands~linking-files:/$ rm ~/not-the-flag
+hacker@commands~linking-files:/$ ln -s /flag /challenge/catflag
+ln: failed to create symbolic link '/challenge/catflag': File exists
+hacker@commands~linking-files:/$ cat /challenge/catflag
+#!/opt/pwn.college/bash
+
+fold -s <<< "About to read out the /home/hacker/not-the-flag file!"
+cat /home/hacker/not-the-flag
+hacker@commands~linking-files:/$ /challenge/catflag
+About to read out the /home/hacker/not-the-flag file!
+cat: /home/hacker/not-the-flag: No such file or directory
+hacker@commands~linking-files:/$ ln -s /flag ~/not-the-flag
+hacker@commands~linking-files:/$ cat /challenge/catflag
+#!/opt/pwn.college/bash
+
+fold -s <<< "About to read out the /home/hacker/not-the-flag file!"
+cat /home/hacker/not-the-flag
+hacker@commands~linking-files:/$ /challenge/catflag
+About to read out the /home/hacker/not-the-flag file!
+pwn.college{Af27H9WwMT73SxMUaufJiCAJBaH.dlTM1UDLyAjN0czW}
+```
+### Learnings:
+- Understanding of how we use symbolic link to link to files
+- How we can get a command to run a different link by using symbolic links
