@@ -54,4 +54,85 @@ pwn.college{c_yEMt-7lViHTkD34UvnPLAOQPh.dVjM5QDLyAjN0czW}
 - Understanding how arguments can also have arguments for themselves.
 - More clarity with what we did during the 'finding files' module challenge.
 
+## Challenge 3: Reading Manuels
+
+### Thought Process:
+After using man I was displayed a few arguments that I could use. Initially while I was confused, I tried using all arguments. The last one had a num value to it. First I tried using it ith just 'NUM' but got an error. After reading the text after that, which said to print it using the number 269. It worked.
+
+### Code:
+```bash
+Connected!
+hacker@man~reading-manuals:~$ cd /
+hacker@man~reading-manuals:/$ man challenge
+
+CHALLENGE(1)                                                       Challenge Commands                                                       CHALLENGE(1)
+
+NAME
+       /challenge/challenge - print the flag!
+
+SYNOPSIS
+       challenge OPTION
+
+DESCRIPTION
+       Output the flag when called with the right arguments.
+
+       --fortune
+              read a fortune
+
+       --version
+              output version information and exit
+
+       --cweqjb NUM
+              print the flag if NUM is 269
+
+AUTHOR
+       Written by Zardus.
+
+REPORTING BUGS
+       The repository for this dojo: <https://github.com/pwncollege/linux-luminarium/>
+
+SEE ALSO
+       man(1) bash-builtins(7)
+
+pwn.college                                                             May 2024                                                            CHALLENGE(1)
+hacker@man~reading-manuals:/$ /challenge/challenge
+Incorrect usage! Please read the challenge man page!
+hacker@man~reading-manuals:/$ /challenge/challenge --fortune
+Even if you do learn to speak correct English, whom are you going to speak
+it to?
+                -- Clarence Darrow
+hacker@man~reading-manuals:/$ /challenge/challenge --version
+I'm exactly the version I need to be!
+hacker@man~reading-manuals:/$ /challenge/challenge cweqjb  NUM
+Incorrect usage! Please read the challenge man page!
+hacker@man~reading-manuals:/$ /challenge/challenge --cweqjb NUM
+Incorrect usage! Please read the challenge man page!
+hacker@man~reading-manuals:/$ /challenge/challenge --cweqjb 269
+Correct usage! Your flag: pwn.college{ILc2P6we97q2Mjb5KUCllUky6xu.dRTM4QDLyAjN0czW}
+```
+
+### Learnings: 
+- Understanding how to use the man command.
+- we can use 'q' to quit the manuel when required.
+- we dont need to use file paths to invoke the man command, only the entry will do.
+
+## Challenge 4: Searching Manuels
+
+### Thought Process
+Using the man command many arguements were displayed for /challenge/challenge. By using ./flag, I found the argument which would give me the flag
+
+### Code:
+```bash
+Connected!
+hacker@man~searching-manuals:~$ man challenge
+hacker@man~searching-manuals:~$ /challenge/challenge --ajzuu
+Initializing...
+Correct usage! Your flag: pwn.college{I43dh9OEHJHvQ0sUd1V5fm25HDP.dVTM4QDLyAjN0czW}
+```
+### Learnings:
+- Introduction to the man command
+
+### References:
+[https://www.youtube.com/watch?v=-CTBgNO-MHY]
+
 
